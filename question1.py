@@ -37,7 +37,7 @@ def system_dynamics(t, z):
 
 num_points = 100
 t_final = 2
-z_initial_condition = [0, 30, 5 * np.pi / 8]
+z_initial_condition = [0, 0.3, 5 * np.pi / 8]
 solution = solve_ivp(system_dynamics,
                      [0, t_final],
                      z_initial_condition,
@@ -51,6 +51,6 @@ t_points = solution.t
 plt.plot(t_points, y_solution)
 plt.grid()
 plt.xlabel("Time (s)")
-plt.ylabel("Lateral position, y (cm)")
+plt.ylabel("Lateral position, y (m)")
 # initially as seen however for the other graphs, i.e. x(t) and theta(t), this was changed accordingly
 plt.show()
